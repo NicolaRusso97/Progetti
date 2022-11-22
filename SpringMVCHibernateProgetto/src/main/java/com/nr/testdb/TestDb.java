@@ -25,7 +25,7 @@ public class TestDb extends HttpServlet {
 		//Setup conn variables
 		String user = "root";
 		String pass = "root";
-		String jdbcUrl ="jdbc:mysql://localhost:3306/dbfifa?useSSL=false";
+		String jdbcUrl ="jdbc:mysql://localhost:3306/dbfifa?serverTimezone=UTC";
 		String driver = "com.mysql.cj.jdbc.Driver";
 		// get conn to db
 		try {
