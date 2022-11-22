@@ -23,14 +23,19 @@
 					<th>OVERALL</th>
 					<th>NAZIONE</th>
 					<th>LINK</th>
+					<th>UPDATE</th>
 				</tr>
 				<c:forEach var="tempPlayers" items="${players}">
+					<c:url var="updateLink" value="/showForm">
+					<c:param name="playerId" value="${tempPlayers.id }" />
+					</c:url>
 					<tr>
 						<td>${tempPlayers.nome}</td>
 						<td>${tempPlayers.ruolo}</td>
 						<td>${tempPlayers.overall}</td>
 						<td>${tempPlayers.nazione}</td>
 						<td>${tempPlayers.link}</td>
+						<td><a href="${updateLink}">Update</a>
 					</tr>
 				</c:forEach>
 			</table>

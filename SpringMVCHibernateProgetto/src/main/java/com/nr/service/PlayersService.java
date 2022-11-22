@@ -18,4 +18,12 @@ public class PlayersService {
 	public List<Player> getPlayers() {
 		return playerRepo.getPlayers();
 	}
+	@Transactional
+	public Player getPlayer(int idPlayer) {
+		return playerRepo.getPlayer(idPlayer);
+	}
+	@Transactional
+	public void saveOrUpdatePlayer(Player player) {
+		playerRepo.saveOrUpdatePlayer(player);
+	}
 }

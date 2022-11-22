@@ -19,5 +19,17 @@ public class PlayerRepositoryImp implements PlayersRepository {
 		Query<Player> theQuery = session.createQuery("from Player order by overall DESC",Player.class);
 		return theQuery.getResultList();
 	}
+	@Override
+	public Player getPlayer(int idPlayer) {
+		Session session = factory.getCurrentSession();
+		Player player = session.get(Player.class, idPlayer);
+		return player;
+	}
+	@Override
+	public void saveOrUpdatePlayer(Player player) {
+		Session session = factory.getCurrentSession();
+		session.saveOrUpdate(player);
+		
+	}
 
 }
